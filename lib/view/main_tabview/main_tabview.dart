@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend_ui/common/color_extension.dart';
 import 'package:frontend_ui/common_widget/tab_button.dart';
 import 'package:frontend_ui/view/home/home_view.dart';
+import 'package:frontend_ui/view/menu/menu_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -62,14 +63,13 @@ class _MainTabViewState extends State<MainTabView> {
                     onTap: () {
                       if (selectTab != 0) {
                         selectTab = 0;
-                        selectPageView = Container();
+                        selectPageView = const MenuView();
                       }
                       if (mounted) {
                         setState(() {});
                       }
                     },
                     isSelected: selectTab == 0),
-
                 TabButton(
                     title: "Offer",
                     icon: "assets/img/tab_offer.png",
@@ -83,9 +83,10 @@ class _MainTabViewState extends State<MainTabView> {
                       }
                     },
                     isSelected: selectTab == 1),
-
-                const SizedBox(width: 40, height: 40,),
-
+                const SizedBox(
+                  width: 40,
+                  height: 40,
+                ),
                 TabButton(
                     title: "Profile",
                     icon: "assets/img/tab_profile.png",
@@ -99,7 +100,6 @@ class _MainTabViewState extends State<MainTabView> {
                       }
                     },
                     isSelected: selectTab == 3),
-
                 TabButton(
                     title: "More",
                     icon: "assets/img/tab_more.png",
@@ -113,7 +113,6 @@ class _MainTabViewState extends State<MainTabView> {
                       }
                     },
                     isSelected: selectTab == 4),
-
               ],
             ),
           ),

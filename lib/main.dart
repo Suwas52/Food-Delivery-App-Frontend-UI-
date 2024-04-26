@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_ui/view/main_tabview/main_tabview.dart';
-import 'package:frontend_ui/view/on_boarding/startup_view.dart';
 
 void main() {
   runApp(const MyApp());
