@@ -4,6 +4,7 @@ import 'package:frontend_ui/common_widget/tab_button.dart';
 import 'package:frontend_ui/view/home/home_view.dart';
 import 'package:frontend_ui/view/menu/menu_view.dart';
 import 'package:frontend_ui/view/offer/offer_view.dart';
+import 'package:frontend_ui/view/profile/profile_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -94,7 +95,7 @@ class _MainTabViewState extends State<MainTabView> {
                     onTap: () {
                       if (selectTab != 3) {
                         selectTab = 3;
-                        selectPageView = Container();
+                        selectPageView = const ProfileView();
                       }
                       if (mounted) {
                         setState(() {});
