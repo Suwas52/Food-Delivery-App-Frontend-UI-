@@ -3,6 +3,7 @@ import 'package:frontend_ui/common/color_extension.dart';
 import 'package:frontend_ui/common_widget/tab_button.dart';
 import 'package:frontend_ui/view/home/home_view.dart';
 import 'package:frontend_ui/view/menu/menu_view.dart';
+import 'package:frontend_ui/view/offer/offer_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -76,7 +77,7 @@ class _MainTabViewState extends State<MainTabView> {
                     onTap: () {
                       if (selectTab != 1) {
                         selectTab = 1;
-                        selectPageView = Container();
+                        selectPageView = const OfferView();
                       }
                       if (mounted) {
                         setState(() {});

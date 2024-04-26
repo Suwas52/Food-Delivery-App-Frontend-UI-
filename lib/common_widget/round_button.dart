@@ -8,7 +8,8 @@ class RoundButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final RoundButtonType type;
-  const RoundButton({super.key, required this.title, required this.onPressed, this.type = RoundButtonType.bgPrimary });
+  final double fontSize;
+  const RoundButton({super.key, required this.title, required this.onPressed, this.fontSize = 16, this.type = RoundButtonType.bgPrimary });
 
   @override
   Widget build(BuildContext context) {
