@@ -4,6 +4,7 @@ import 'package:frontend_ui/view/more/add_card_view.dart';
 import '../../common/color_extension.dart';
 import '../../common_widget/round_button.dart';
 import '../../common_widget/round_icon_button.dart';
+import 'my_order_view.dart';
 
 
 class PaymentDetailsView extends StatefulWidget {
@@ -61,7 +62,8 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Container()));
+                                builder: (context) =>
+                                const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",

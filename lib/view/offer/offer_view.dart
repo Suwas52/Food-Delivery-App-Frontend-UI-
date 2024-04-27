@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../common/color_extension.dart';
 import '../../common_widget/popular_restaurant_row.dart';
 import '../../common_widget/round_button.dart';
+import '../more/my_order_view.dart';
 
 class OfferView extends StatefulWidget {
   const OfferView({super.key});
@@ -94,7 +95,8 @@ class _OfferViewState extends State<OfferView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Container()));
+                                builder: (context) =>
+                                const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",

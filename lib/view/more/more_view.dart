@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_ui/view/more/about_us_view.dart';
 import 'package:frontend_ui/view/more/inbox_view.dart';
+import 'package:frontend_ui/view/more/my_order_view.dart';
 import 'package:frontend_ui/view/more/notification_view.dart';
 import 'package:frontend_ui/view/more/payment_details_view.dart';
 
@@ -82,7 +83,8 @@ class _MoreViewState extends State<MoreView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Container()));
+                                builder: (context) =>
+                                const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
@@ -110,6 +112,15 @@ class _MoreViewState extends State<MoreView> {
                                 MaterialPageRoute(
                                     builder: (context) =>
                                     const PaymentDetailsView()));
+
+                            break;
+
+                          case "2":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const MyOrderView()));
 
                             break;
 
