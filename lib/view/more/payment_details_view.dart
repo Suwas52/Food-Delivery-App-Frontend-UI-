@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_ui/view/more/add_card_view.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/round_button.dart';
@@ -221,7 +222,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                           backgroundColor: Colors.transparent,
                           context: context,
                           builder: (context) {
-                            return Container();
+                            return const AddCardView();
                           });
                       // Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCardView() ));
                     }),
