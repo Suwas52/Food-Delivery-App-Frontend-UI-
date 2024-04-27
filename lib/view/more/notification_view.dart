@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../common/color_extension.dart';
+import 'my_order_view.dart';
 
 
 class NotificationsView extends StatefulWidget {
@@ -83,6 +84,11 @@ class _NotificationsViewState extends State<NotificationsView> {
                     ),
                     IconButton(
                       onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                const MyOrderView()));
                       },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",

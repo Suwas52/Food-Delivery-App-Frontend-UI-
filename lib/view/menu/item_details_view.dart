@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/round_icon_button.dart';
+import '../more/my_order_view.dart';
 // import '../more/my_order_view.dart';
 
 class ItemDetailsView extends StatefulWidget {
@@ -465,36 +466,36 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                                   )
                                                 ],
                                               )),
-                                          // InkWell(
-                                          //   onTap: () {
-                                          //     Navigator.push(
-                                          //         context,
-                                          //         MaterialPageRoute(
-                                          //             builder: (context) =>
-                                          //             const MyOrderView()));
-                                          //   },
-                                          //   child: Container(
-                                          //     width: 45,
-                                          //     height: 45,
-                                          //     decoration: BoxDecoration(
-                                          //         color: Colors.white,
-                                          //         borderRadius:
-                                          //         BorderRadius.circular(
-                                          //             22.5),
-                                          //         boxShadow: const [
-                                          //           BoxShadow(
-                                          //               color: Colors.black12,
-                                          //               blurRadius: 4,
-                                          //               offset: Offset(0, 2))
-                                          //         ]),
-                                          //     alignment: Alignment.center,
-                                          //     child: Image.asset(
-                                          //         "assets/img/shopping_cart.png",
-                                          //         width: 20,
-                                          //         height: 20,
-                                          //         color: TColor.primary),
-                                          //   ),
-                                          // ),
+                                          InkWell(
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                      const MyOrderView()));
+                                            },
+                                            child: Container(
+                                              width: 45,
+                                              height: 45,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                  BorderRadius.circular(
+                                                      22.5),
+                                                  boxShadow: const [
+                                                    BoxShadow(
+                                                        color: Colors.black12,
+                                                        blurRadius: 4,
+                                                        offset: Offset(0, 2))
+                                                  ]),
+                                              alignment: Alignment.center,
+                                              child: Image.asset(
+                                                  "assets/img/shopping_cart.png",
+                                                  width: 20,
+                                                  height: 20,
+                                                  color: TColor.primary),
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     )

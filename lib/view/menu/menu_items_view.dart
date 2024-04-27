@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_ui/common/color_extension.dart';
 import 'package:frontend_ui/common_widget/round_textfield.dart';
 import 'package:frontend_ui/view/menu/item_details_view.dart';
 
 import "../../common_widget/menu_item_row.dart";
+import '../more/my_order_view.dart';
+import 'menu_view.dart';
 
 class MenuItemsView extends StatefulWidget {
   final Map mObj;
@@ -99,21 +102,31 @@ class _MenuItemsViewState extends State<MenuItemsView> {
                 child: Row(
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         icon: Image.asset("assets/img/btn_back.png",
                             width: 20, height: 20)),
                     const SizedBox(
                       width: 8,
                     ),
-                    Text(
-                      widget.mObj["name"].toString(),
-                      style: TextStyle(
-                          color: TColor.primaryText,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600),
+                    Expanded(
+                      child: Text(
+                        widget.mObj["name"].toString(),
+                        style: TextStyle(
+                            color: TColor.primaryText,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
+                      ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                const MyOrderView()));
+                      },
                       icon: Image.asset(
                         "assets/img/shopping_cart.png",
                         width: 25,
