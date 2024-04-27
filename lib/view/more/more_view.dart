@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_ui/view/more/about_us_view.dart';
+import 'package:frontend_ui/view/more/inbox_view.dart';
+import 'package:frontend_ui/view/more/notification_view.dart';
 import 'package:frontend_ui/view/more/payment_details_view.dart';
 
 import '../../common/color_extension.dart';
@@ -107,6 +110,33 @@ class _MoreViewState extends State<MoreView> {
                                 MaterialPageRoute(
                                     builder: (context) =>
                                     const PaymentDetailsView()));
+
+                            break;
+
+                          case "3":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const NotificationsView()));
+
+                            break;
+
+                          case "4":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const InboxView()));
+
+                            break;
+
+                          case "5":
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const AboutUsView()));
 
                             break;
                           default:

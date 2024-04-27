@@ -7,32 +7,46 @@ class RoundIconButton extends StatelessWidget {
   final String icon;
   final Color color;
   final double fontSize;
-  const RoundIconButton({super.key, required this.onPressed, required this.title, required this.icon, required this.color, this.fontSize = 12});
+  final FontWeight fontWeight;
+  const RoundIconButton(
+      {super.key,
+      required this.onPressed,
+      required this.title,
+      required this.icon,
+      required this.color,
+      this.fontSize = 12,
+      this.fontWeight = FontWeight.w500,});
 
   @override
   Widget build(BuildContext context) {
-    return  InkWell(
+    return InkWell(
       onTap: onPressed,
       child: Container(
         height: 56,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(28),),
+          borderRadius: BorderRadius.circular(28),
+        ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(icon, width: 17, height: 17, fit: BoxFit.contain,),
+            Image.asset(
+              icon,
+              width: 17,
+              height: 17,
+              fit: BoxFit.contain,
+            ),
             const SizedBox(
               width: 8,
             ),
-
             Text(
               title,
               style: TextStyle(
                   color: TColor.white,
                   fontSize: fontSize,
-                  fontWeight: FontWeight.w500),),
+                  fontWeight: fontWeight),
+            ),
           ],
         ),
       ),
