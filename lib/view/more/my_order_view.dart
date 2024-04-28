@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_ui/view/more/checkout_view.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/round_button.dart';
@@ -343,7 +344,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Container(),
+                              builder: (context) => const CheckoutView(),
                             ),
                           );
                         }),
