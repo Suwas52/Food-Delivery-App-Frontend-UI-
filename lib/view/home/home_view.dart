@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_ui/common/color_extension.dart';
+import 'package:frontend_ui/common/globs.dart';
+import 'package:frontend_ui/common/service_call.dart';
 import 'package:frontend_ui/common_widget/round_textfield.dart';
 
 import '../../common_widget/category_cell.dart';
@@ -116,7 +118,7 @@ class _HomeViewState extends State<HomeView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Good morning Akila!",
+                    Text("Good morning ${ ServiceCall.userPayload[KKey.name] ?? ""}!",
                     style: TextStyle(
                       color: TColor.primaryText,
                       fontSize: 20,
