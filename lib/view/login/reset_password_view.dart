@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_ui/common/color_extension.dart';
+import 'package:frontend_ui/common/extension.dart';
 import 'package:frontend_ui/common_widget/round_button.dart';
 import 'package:frontend_ui/common_widget/round_textfield.dart';
 import 'package:frontend_ui/view/login/new_password_view.dart';
+
+import '../../common/globs.dart';
+import '../../common/service_call.dart';
+import 'otp_view.dart';
 
 class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({super.key});
@@ -17,7 +22,6 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -60,13 +64,50 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               const SizedBox(
                 height: 25,
               ),
-              RoundButton(title: "Send", onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const NewPasswordView()));
-              }),
+              RoundButton(
+                  title: "Send",
+                  onPressed: () {
+                    btnSubmit();
+                  }),
             ],
           ),
         ),
       ),
     );
+  }
+
+  //TODO: Action
+  void btnSubmit() {
+    if (!txtEmail.text.isEmail) {
+      mdShowAlert(Globs.appName, MSG.enterEmail, () {});
+      return;
+    }
+
+    endEditing();
+
+    serviceCallForgotRequest({"email": txtEmail.text});
+  }
+
+  //TODO: ServiceCall
+
+  void serviceCallForgotRequest(Map<String, dynamic> parameter) {
+    Globs.showHUD();
+
+    ServiceCall.post(parameter, SVKey.svForgotPasswordRequest,
+        withSuccess: (responseObj) async {
+      Globs.hideHUD();
+      if (responseObj[KKey.status] == "1") {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => OTPView(email: txtEmail.text)));
+      } else {
+        mdShowAlert(Globs.appName,
+            responseObj[KKey.message] as String? ?? MSG.fail, () {});
+      }
+    }, failure: (err) async {
+      Globs.hideHUD();
+      mdShowAlert(Globs.appName, err.toString(), () {});
+    });
   }
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_ui/view/login/welcome_view.dart';
 
+import '../../common/globs.dart';
+import '../main_tabview/main_tabview.dart';
+
 class StartupView extends StatefulWidget {
   const StartupView({super.key});
 
@@ -14,15 +17,21 @@ class _StartupViewState extends State<StartupView> {
     super.initState();
     goWelcomePage();
   }
-  
+
   void goWelcomePage() async {
-    
-    await Future.delayed( const Duration(seconds: 3));
+
+    await Future.delayed( const Duration(seconds: 3) );
     welcomePage();
   }
-
   void welcomePage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const WelcomeView()));
+
+    if (Globs.udValueBool(Globs.userLogin)) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const MainTabView()));
+    }else{
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const WelcomeView()));
+    }
   }
   
   @override

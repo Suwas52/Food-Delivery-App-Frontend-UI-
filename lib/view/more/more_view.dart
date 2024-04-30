@@ -6,6 +6,7 @@ import 'package:frontend_ui/view/more/notification_view.dart';
 import 'package:frontend_ui/view/more/payment_details_view.dart';
 
 import '../../common/color_extension.dart';
+import '../../common/service_call.dart';
 
 class MoreView extends StatefulWidget {
   const MoreView({super.key});
@@ -150,6 +151,9 @@ class _MoreViewState extends State<MoreView> {
                                     const AboutUsView()));
 
                             break;
+                          case "6":
+                            ServiceCall.logout();
+
                           default:
                         }
                       },
